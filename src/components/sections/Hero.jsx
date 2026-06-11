@@ -7,8 +7,8 @@ import { fadeUp, stagger } from '../../utils/motionVariants'
 
 const iconMap = { Clock, Shield, Users, Heart }
 
-const HERO_BG = '/dwarka-pc-hero.png'
-const HERO_BG_MOBILE = '/dwarka-phone-hero.jpeg'
+const HERO_BG = '/dwarkadhish-main-hero.jpeg'
+const HERO_BG_MOBILE = '/dwarkadhish-main-hero.jpeg'
 
 export default function Hero() {
   const waMsg = 'Hello Shree Momai Cabs! I want to book a taxi. Please share details.'
