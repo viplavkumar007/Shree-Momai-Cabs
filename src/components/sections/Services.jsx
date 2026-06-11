@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import {
   MapPin, Star, Waves, Flower, RefreshCw, Plane,
   Train, Navigation, Users, Building, Clock, MessageCircle,
-  Anchor, Bridge,
+  Anchor,
 } from 'lucide-react'
 import { services, brand } from '../../data/siteContent'
 import SectionLabel from '../ui/SectionLabel'
@@ -24,27 +24,28 @@ function ServiceCard({ service, index }) {
   return (
     <motion.div
       variants={scaleIn}
-      whileHover={{ y: -6, transition: { duration: 0.2 } }}
-      className="group bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-shadow duration-300 flex flex-col"
+      whileHover={{ y: -8, transition: { duration: 0.2 } }}
+      className="group relative overflow-hidden rounded-lg border border-brand-blue/10 bg-white shadow-md shadow-brand-blue/5 hover:border-brand-gold/50 hover:shadow-2xl hover:shadow-brand-blue/15 transition-all duration-300 flex flex-col"
     >
       {/* Color top bar */}
-      <div className="h-1.5 bg-gradient-to-r from-brand-blue to-brand-gold" />
+      <div className="h-1.5 bg-gradient-to-r from-brand-blue via-brand-gold to-[#25D366]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-br from-brand-blue/10 via-brand-gold/10 to-[#25D366]/10 opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
 
-      <div className="p-6 flex flex-col flex-1">
+      <div className="relative p-6 flex flex-col flex-1">
         {/* Icon */}
-        <div className="w-12 h-12 bg-brand-blue/8 border border-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue group-hover:border-brand-blue transition-colors duration-300">
-          <Icon size={22} className="text-brand-blue group-hover:text-white transition-colors duration-300" />
+        <div className="w-12 h-12 rounded-md bg-brand-blue text-white border border-brand-blue/20 flex items-center justify-center mb-4 shadow-lg shadow-brand-blue/20 group-hover:bg-brand-gold group-hover:text-brand-black group-hover:border-brand-gold transition-colors duration-300">
+          <Icon size={22} className="transition-colors duration-300" />
         </div>
 
         {/* Number */}
-        <span className="font-heading font-900 text-5xl text-brand-gold/10 leading-none mb-2 select-none">
+        <span className="absolute right-5 top-7 font-heading font-900 text-6xl text-brand-blue/10 group-hover:text-brand-gold/20 leading-none select-none transition-colors duration-300">
           {String(index + 1).padStart(2, '0')}
         </span>
 
-        <h3 className="font-heading font-700 text-lg text-brand-black leading-tight mb-2">
+        <h3 className="relative font-heading font-700 text-lg text-brand-black leading-tight mb-2 pr-12">
           {service.title}
         </h3>
-        <p className="font-body text-gray-500 text-sm leading-relaxed flex-1 mb-5">
+        <p className="font-body text-gray-600 text-sm leading-relaxed flex-1 mb-5">
           {service.desc}
         </p>
 
@@ -52,7 +53,7 @@ function ServiceCard({ service, index }) {
           href={buildWhatsAppUrl(waMsg)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-brand-gold text-brand-black px-4 py-2.5 font-heading font-700 text-xs uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.97] transition-all duration-200 w-full justify-center"
+          className="flex items-center gap-2 rounded-md bg-brand-gold text-brand-black px-4 py-2.5 font-heading font-700 text-xs uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.97] transition-all duration-200 w-full justify-center shadow-md shadow-brand-gold/20"
         >
           <MessageCircle size={14} />
           Book Now

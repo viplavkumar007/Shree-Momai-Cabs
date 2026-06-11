@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Phone, Mail, MapPin, Menu, X, MessageCircle } from 'lucide-react'
+import { Phone, Menu, X } from 'lucide-react'
 import Logo from '../ui/Logo'
+import WhatsAppIcon from '../ui/WhatsAppIcon'
 import { brand, nav } from '../../data/siteContent'
 import { buildWhatsAppUrl, buildCallUrl, scrollTo } from '../../utils/helpers'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
@@ -32,37 +33,13 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── Top Info Bar ─────────────────────────────── */}
-      <div className="hidden md:block bg-white border-b border-gray-200 text-brand-black text-sm z-50">
-        <div className="max-w-7xl mx-auto px-6 h-10 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <MapPin size={13} className="text-brand-blue" />
-            <span className="font-body font-600 text-brand-blue">{brand.name}</span>
-            <span className="text-gray-400 mx-1">|</span>
-            <span className="text-gray-600">{brand.location}</span>
-          </div>
-          <div className="flex items-center gap-5">
-            {brand.phones.map((p) => (
-              <a key={p} href={buildCallUrl(p)} className="flex items-center gap-1.5 text-brand-black hover:text-brand-blue transition-colors">
-                <Phone size={12} className="text-brand-gold" />
-                <span>{p}</span>
-              </a>
-            ))}
-            <a href={`mailto:${brand.email}`} className="flex items-center gap-1.5 text-brand-black hover:text-brand-blue transition-colors">
-              <Mail size={12} className="text-brand-gold" />
-              <span>{brand.email}</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* ── Main Navigation Bar ──────────────────────── */}
       <motion.header
         className={`
           sticky top-0 left-0 right-0 z-50
           transition-all duration-300
-          ${scrolled ? 'shadow-2xl' : ''}
-          bg-brand-blue
+          ${scrolled ? 'shadow-xl' : 'shadow-md'}
+          bg-white border-b border-gray-100
         `}
         initial={{ y: -80 }}
         animate={{ y: 0 }}
@@ -71,7 +48,7 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between" role="navigation" aria-label="Main navigation">
 
           {/* Logo */}
-          <button onClick={() => handleNav('#home')} className="focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm" aria-label="Go to home">
+          <button onClick={() => handleNav('#home')} className="focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-md" aria-label="Go to home">
             <Logo size="md" />
           </button>
 
@@ -86,8 +63,8 @@ export default function Navbar() {
                     onClick={() => handleNav(href)}
                     className={`
                       relative px-4 py-2 font-heading font-600 text-sm tracking-[0.1em] uppercase transition-colors duration-200
-                      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm
-                      ${isActive ? 'text-brand-gold' : 'text-white/90 hover:text-brand-gold'}
+                      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-md
+                      ${isActive ? 'text-brand-blue' : 'text-brand-black hover:text-brand-blue'}
                     `}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -108,19 +85,28 @@ export default function Navbar() {
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-3">
             <a
+              href={buildCallUrl(brand.phones[0])}
+              className="hidden md:flex items-center gap-2 rounded-md bg-brand-gold text-brand-black px-4 py-2.5 font-heading font-700 text-sm uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.97] transition-all duration-200 shadow-md shadow-brand-gold/20"
+              aria-label={`Call ${brand.phones[0]}`}
+            >
+              <Phone size={16} />
+              Call
+            </a>
+            <a
               href={buildWhatsAppUrl('Hello! I want to book a taxi with Shree Momai Cabs.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 bg-brand-gold text-brand-black px-5 py-2.5 font-heading font-700 text-sm uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.97] transition-all duration-200 shadow-lg"
+              className="hidden md:flex items-center gap-2 rounded-md bg-[#25D366] text-white px-4 py-2.5 font-heading font-700 text-sm uppercase tracking-wide hover:bg-[#1EBE5D] active:scale-[0.97] transition-all duration-200 shadow-md shadow-[#25D366]/20"
+              aria-label="Chat on WhatsApp"
             >
-              <MessageCircle size={16} />
-              Book Taxi Now
+              <WhatsAppIcon size={17} />
+              WhatsApp
             </a>
 
             {/* Hamburger */}
             <button
               onClick={() => setMenuOpen((p) => !p)}
-              className="lg:hidden w-10 h-10 flex items-center justify-center text-white hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm"
+              className="lg:hidden w-10 h-10 flex items-center justify-center rounded-md text-brand-black hover:text-brand-blue transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
             >
@@ -168,10 +154,10 @@ export default function Navbar() {
                 href={buildWhatsAppUrl('Hello! I want to book a taxi with Shree Momai Cabs.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 bg-brand-gold text-brand-black py-4 font-heading font-700 text-lg uppercase tracking-wide"
+                className="mt-4 flex items-center justify-center gap-2 rounded-md bg-[#25D366] text-white py-4 font-heading font-700 text-lg uppercase tracking-wide"
               >
-                <MessageCircle size={20} />
-                Book Taxi Now
+                <WhatsAppIcon size={20} />
+                WhatsApp
               </a>
             </div>
           </motion.div>

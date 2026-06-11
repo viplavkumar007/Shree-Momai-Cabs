@@ -78,9 +78,9 @@ export default function Contact() {
               key={label}
               variants={scaleIn}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-white border border-gray-100 shadow-sm p-7 text-center hover:shadow-xl transition-shadow duration-300 group"
+              className="rounded-lg bg-white border border-gray-100 shadow-sm p-7 text-center hover:shadow-xl transition-shadow duration-300 group"
             >
-              <div className={`w-14 h-14 mx-auto mb-5 flex items-center justify-center ${color === 'gold' ? 'bg-brand-gold/10 group-hover:bg-brand-gold' : 'bg-brand-blue/8 group-hover:bg-brand-blue'} transition-colors duration-300`}>
+              <div className={`w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-md ${color === 'gold' ? 'bg-brand-gold/10 group-hover:bg-brand-gold' : 'bg-brand-blue/10 group-hover:bg-brand-blue'} transition-colors duration-300`}>
                 <Icon size={24} className={`${color === 'gold' ? 'text-brand-gold group-hover:text-brand-black' : 'text-brand-blue group-hover:text-white'} transition-colors duration-300`} />
               </div>
               <div className="font-heading font-700 text-sm uppercase tracking-widest text-gray-400 mb-2">{label}</div>
@@ -91,7 +91,7 @@ export default function Contact() {
                 href={href()}
                 target={label !== 'Call Us' ? '_blank' : undefined}
                 rel="noopener noreferrer"
-                className={`mt-5 inline-flex items-center justify-center gap-2 px-5 py-2.5 font-heading font-700 text-xs uppercase tracking-wide transition-all duration-200 active:scale-[0.97] ${color === 'gold' ? 'bg-brand-gold text-brand-black hover:bg-brand-goldDark' : 'bg-brand-blue text-white hover:bg-brand-blueLight'}`}
+                className={`mt-5 inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 font-heading font-700 text-xs uppercase tracking-wide transition-all duration-200 active:scale-[0.97] ${color === 'gold' ? 'bg-brand-gold text-brand-black hover:bg-brand-goldDark' : 'bg-brand-blue text-white hover:bg-brand-blueLight'}`}
               >
                 {btnLabel}
               </a>
@@ -117,7 +117,7 @@ export default function Contact() {
             href={buildWhatsAppUrl('Hello Shree Momai Cabs! I need to book a taxi urgently.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-brand-gold text-brand-black px-7 py-3 font-heading font-700 text-sm uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.97] transition-all duration-200 shadow-lg"
+            className="flex items-center gap-2 rounded-md bg-brand-gold text-brand-black px-7 py-3 font-heading font-700 text-sm uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.97] transition-all duration-200 shadow-lg"
           >
             <MessageCircle size={18} />
             Book Now

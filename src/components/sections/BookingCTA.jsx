@@ -111,14 +111,14 @@ export default function BookingCTA() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-brand-blue/20 border border-brand-gold/30 p-12 text-center"
+                className="rounded-lg bg-brand-blue/20 border border-brand-gold/30 p-12 text-center"
               >
                 <CheckCircle size={52} className="text-brand-gold mx-auto mb-4" />
                 <h3 className="font-heading font-800 text-2xl text-white mb-3">Booking Sent!</h3>
                 <p className="font-body text-white/70">Your enquiry has been sent via WhatsApp. We'll confirm shortly.</p>
               </motion.div>
             ) : (
-              <div className="bg-brand-charcoal/60 border border-white/10 p-8">
+              <div className="rounded-lg bg-brand-charcoal/60 border border-white/10 p-8">
                 <h3 className="font-heading font-700 text-xl text-white mb-6 uppercase tracking-wide border-b border-white/10 pb-4">
                   Send Booking Enquiry
                 </h3>
@@ -206,7 +206,7 @@ export default function BookingCTA() {
 
                 <button
                   onClick={handleSubmit}
-                  className="flex items-center justify-center gap-2 w-full bg-brand-gold text-brand-black py-4 font-heading font-700 text-base uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.98] transition-all duration-200 mt-2 shadow-lg hover:shadow-brand-gold/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-charcoal"
+                  className="flex items-center justify-center gap-2 w-full rounded-md bg-brand-gold text-brand-black py-4 font-heading font-700 text-base uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.98] transition-all duration-200 mt-2 shadow-lg hover:shadow-brand-gold/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-charcoal"
                 >
                   <MessageCircle size={20} />
                   Send Enquiry on WhatsApp

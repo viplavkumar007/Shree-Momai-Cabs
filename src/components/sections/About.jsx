@@ -3,10 +3,7 @@ import { motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
 import { about } from '../../data/siteContent'
 import SectionLabel from '../ui/SectionLabel'
-import { fadeUp, stagger, slideLeft, slideRight, viewportOptions } from '../../utils/motionVariants'
-
-const ABOUT_IMG = 'https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&q=80'
-const DWARKA_IMG = 'https://images.unsplash.com/photo-1598967573640-45c5d5b59e89?w=600&q=80'
+import { fadeUp, stagger, slideLeft, viewportOptions } from '../../utils/motionVariants'
 
 export default function About() {
   return (
@@ -20,42 +17,22 @@ export default function About() {
             initial="hidden"
             whileInView="visible"
             viewport={viewportOptions}
-            className="relative"
+            className="relative flex min-h-[360px] items-center justify-center lg:min-h-[460px]"
           >
-            {/* Main image */}
-            <div className="relative">
-              {/* Blue top-left accent */}
-              <div className="absolute -top-4 -left-4 w-16 h-16 bg-brand-blue z-0" />
+            <div className="absolute -top-5 -left-5 h-24 w-24 bg-brand-blue" />
+            <div className="absolute -bottom-5 -right-5 h-24 w-24 bg-brand-gold" />
+
+            <div className="relative z-10 flex w-full items-center justify-center border border-gray-100 bg-white px-10 py-16 shadow-2xl">
               <img
-                src={ABOUT_IMG}
-                alt="Shree Momai Cabs fleet"
-                className="relative z-10 w-full h-[420px] object-cover shadow-2xl"
-                loading="lazy"
+                src="/logo.png"
+                alt="Shree Momai Cabs"
+                className="w-full max-w-[420px] object-contain"
+                loading="eager"
               />
-              {/* Gold diagonal overlay */}
-              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-brand-blue/60 to-transparent z-20" />
             </div>
 
-            {/* Secondary floating image */}
-            <motion.div
-              initial={{ opacity: 0, x: 40, y: 40 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
-              viewport={viewportOptions}
-              transition={{ delay: 0.3, duration: 0.7 }}
-              className="absolute -bottom-8 -right-4 w-48 h-36 shadow-2xl z-30 border-4 border-white"
-            >
-              <img
-                src={DWARKA_IMG}
-                alt="Dwarka temple"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </motion.div>
-
-            {/* Gold accent bar */}
             <div className="absolute top-0 right-0 w-1.5 h-2/3 bg-brand-gold z-20" />
 
-            {/* Experience badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}

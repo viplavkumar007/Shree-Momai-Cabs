@@ -13,21 +13,25 @@ function DestCard({ dest }) {
     <motion.div
       variants={scaleIn}
       whileHover={{ y: -8, transition: { duration: 0.25 } }}
-      className="group relative overflow-hidden bg-brand-charcoal shadow-lg"
+      className="group relative overflow-hidden rounded-lg bg-white shadow-lg shadow-brand-black/15 hover:shadow-2xl transition-shadow duration-300"
     >
       {/* Image */}
-      <div className="overflow-hidden h-48">
+      <div className="overflow-hidden h-48 bg-brand-gray">
         <img
           src={dest.image}
           alt={dest.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          onError={(event) => {
+            event.currentTarget.onerror = null
+            event.currentTarget.src = 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=900&q=80'
+          }}
+          className="w-full h-full object-cover brightness-105 saturate-110 group-hover:scale-110 transition-transform duration-500"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-brand-black/20 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-t from-brand-black/20 via-transparent to-transparent" />
       </div>
 
       {/* Distance badge */}
-      <div className="absolute top-4 right-4 bg-brand-gold text-brand-black px-3 py-1 font-heading font-700 text-xs uppercase">
+      <div className="absolute top-4 right-4 rounded-md bg-brand-gold text-brand-black px-3 py-1 font-heading font-700 text-xs uppercase">
         {dest.dist}
       </div>
 
@@ -35,14 +39,14 @@ function DestCard({ dest }) {
       <div className="p-5">
         <div className="flex items-center gap-2 mb-2">
           <MapPin size={14} className="text-brand-gold" />
-          <h3 className="font-heading font-700 text-xl text-white">{dest.name}</h3>
+          <h3 className="font-heading font-700 text-xl text-brand-black">{dest.name}</h3>
         </div>
-        <p className="font-body text-white/60 text-sm mb-4 leading-relaxed">{dest.desc}</p>
+        <p className="font-body text-gray-600 text-sm mb-4 leading-relaxed">{dest.desc}</p>
         <a
           href={buildWhatsAppUrl(waMsg)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-brand-gold text-brand-black px-4 py-2.5 font-heading font-700 text-xs uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.97] transition-all duration-200 w-full justify-center"
+          className="flex items-center gap-2 rounded-md bg-brand-gold text-brand-black px-4 py-2.5 font-heading font-700 text-xs uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.97] transition-all duration-200 w-full justify-center"
         >
           <MessageCircle size={14} />
           Enquire Now

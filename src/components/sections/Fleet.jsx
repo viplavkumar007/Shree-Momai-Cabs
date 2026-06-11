@@ -13,7 +13,7 @@ function FleetCard({ vehicle }) {
     <motion.div
       variants={scaleIn}
       whileHover={{ y: -6, transition: { duration: 0.2 } }}
-      className="group bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-shadow duration-300 overflow-hidden"
+      className="group overflow-hidden rounded-lg bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-shadow duration-300"
     >
       {/* Image */}
       <div className="relative overflow-hidden h-52">
@@ -27,7 +27,7 @@ function FleetCard({ vehicle }) {
 
         {/* Badge */}
         {vehicle.badge && (
-          <div className="absolute top-4 left-4 bg-brand-gold text-brand-black px-3 py-1 font-heading font-700 text-xs uppercase tracking-wide">
+          <div className="absolute top-4 left-4 rounded-md bg-brand-gold text-brand-black px-3 py-1 font-heading font-700 text-xs uppercase tracking-wide">
             {vehicle.badge}
           </div>
         )}
@@ -68,7 +68,7 @@ function FleetCard({ vehicle }) {
           href={buildWhatsAppUrl(waMsg)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-brand-blue text-white px-4 py-3 font-heading font-700 text-sm uppercase tracking-wide hover:bg-brand-blueLight active:scale-[0.97] transition-all duration-200 w-full justify-center"
+          className="flex items-center gap-2 rounded-md bg-brand-blue text-white px-4 py-3 font-heading font-700 text-sm uppercase tracking-wide hover:bg-brand-blueLight active:scale-[0.97] transition-all duration-200 w-full justify-center"
         >
           <MessageCircle size={16} />
           Book This Vehicle

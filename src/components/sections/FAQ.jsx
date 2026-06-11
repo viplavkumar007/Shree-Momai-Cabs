@@ -9,7 +9,7 @@ function FAQItem({ faq, isOpen, onToggle, index }) {
   return (
     <motion.div
       variants={fadeUp}
-      className="border border-gray-200 overflow-hidden"
+      className="overflow-hidden rounded-lg border border-gray-200"
     >
       <button
         onClick={onToggle}

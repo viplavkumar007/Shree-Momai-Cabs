@@ -73,7 +73,7 @@ export default function AirportSection() {
                 href={buildWhatsAppUrl(waMsg)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-brand-gold text-brand-black px-8 py-4 font-heading font-700 text-base uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.97] transition-all duration-200 shadow-xl"
+                className="inline-flex items-center gap-2 rounded-md bg-brand-gold text-brand-black px-8 py-4 font-heading font-700 text-base uppercase tracking-wide hover:bg-brand-goldDark active:scale-[0.97] transition-all duration-200 shadow-xl"
               >
                 <MessageCircle size={20} />
                 Book Airport Taxi
@@ -94,14 +94,14 @@ export default function AirportSection() {
                 key={ap.code}
                 variants={scaleIn}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="bg-white/5 border border-white/10 p-6 hover:border-brand-gold/40 hover:bg-white/8 transition-all duration-300 group"
+                className="rounded-lg bg-white/5 border border-white/10 p-6 hover:border-brand-gold/40 hover:bg-white/10 transition-all duration-300 group"
               >
-                <div className="w-10 h-10 bg-brand-blue/30 flex items-center justify-center mb-4 group-hover:bg-brand-gold/20 transition-colors">
+                <div className="w-10 h-10 rounded-md bg-brand-blue/30 flex items-center justify-center mb-4 group-hover:bg-brand-gold/20 transition-colors">
                   <Plane size={18} className="text-brand-gold" />
                 </div>
                 <div className="font-heading font-700 text-xl text-white mb-1">{ap.code}</div>
                 <div className="font-body text-white/60 text-sm mb-3">{ap.name}</div>
-                <div className="inline-block bg-brand-gold/10 border border-brand-gold/20 text-brand-gold px-3 py-1 font-heading text-xs font-600 uppercase tracking-wide">
+                <div className="inline-block rounded-md bg-brand-gold/10 border border-brand-gold/20 text-brand-gold px-3 py-1 font-heading text-xs font-600 uppercase tracking-wide">
                   {ap.dist} away
                 </div>
               </motion.div>
