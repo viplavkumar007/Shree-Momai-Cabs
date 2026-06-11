@@ -44,7 +44,7 @@ export const hero = {
   stats: [
     { value: '5000+', label: 'Happy Customers' },
     { value: '50+',   label: 'Routes Covered' },
-    { value: '10+',   label: 'Years Experience' },
+    { value: '1+',    label: 'Years Experience' },
     { value: '24×7',  label: 'Availability' },
   ],
 };
