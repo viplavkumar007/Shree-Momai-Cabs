@@ -40,7 +40,7 @@ export default function About() {
               transition={{ delay: 0.5 }}
               className="absolute top-8 -right-6 bg-brand-blue text-white px-5 py-4 shadow-2xl z-30"
             >
-              <div className="font-heading font-900 text-4xl text-brand-gold leading-none">10+</div>
+              <div className="font-heading font-900 text-4xl text-brand-gold leading-none">1+</div>
               <div className="font-body text-xs uppercase tracking-wider mt-1 text-white/80">Years of Trust</div>
             </motion.div>
           </motion.div>

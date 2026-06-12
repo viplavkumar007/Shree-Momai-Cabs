@@ -53,7 +53,7 @@ export const about = {
   badge:   'About Us',
   heading: 'Feel the Difference with Shree Momai Cabs',
   body: [
-    'Shree Momai Cabs is a trusted name in taxi and tour services based in Dwarka, Gujarat. We have been serving pilgrims, tourists, and local residents for over a decade with reliable, safe, and comfortable travel experiences.',
+    'Shree Momai Cabs is a trusted name in taxi and tour services based in Dwarka, Gujarat. We have been serving pilgrims, tourists, and local residents for over 1 year with reliable, safe, and comfortable travel experiences.',
     'We specialize in Dwarka Darshan, Bet Dwarka tours, Nageshwar Jyotirlinga visits, beach tours, airport transfers, and outstation cab services across Gujarat. Our experienced local drivers know every route, temple, and hidden gem of this sacred city.',
     'Our fleet of well-maintained AC vehicles ensures you travel in comfort while our professional drivers ensure you reach your destination safely and on time.',
   ],
